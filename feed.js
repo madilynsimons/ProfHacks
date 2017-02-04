@@ -19,4 +19,18 @@
         }
       });
     }
+	
+	function initElement() {
+        var p = document.getElementById("logo");
+        // NOTE: showAlert(); or showAlert(param); will NOT work here.
+        // Must be a reference to a function name, not a function call.
+        p.onclick = showAlert;
+      };
+	
+	function showAlert(event) {
+		var msgString = "This website is no bueno.";
+		alert(msgString);
+	}
+	
+	
     google.setOnLoadCallback(initialize);
