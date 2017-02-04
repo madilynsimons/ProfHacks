@@ -1,5 +1,5 @@
 {
-  	"Project Watermelon",
+  	"name": "Project Watermelon",
   	"version": "0.1",
   	"manifest_version": 2,
   	"description": "Alerts the user of many websites that can be biased or consider fake news.",
