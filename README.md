@@ -1,3 +1,5 @@
-This is our thing
+Project Watermelon 2k17
 
-thx
+A Chrome Extension for Profhacks
+
+-By Tim, Triston, and Chris
