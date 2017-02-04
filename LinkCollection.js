@@ -14,9 +14,9 @@ function ReadFiles(file : String){
 
   fakeLinks = new Array();
 
-  var sr = new File.OpenText(file);
-  var input = "";
-  var counter = 0;
+  let sr = new File.OpenText(file);
+  let input = "";
+  let counter = 0;
 
   while(input != null){
     input = sr.ReadLine();
@@ -34,8 +34,8 @@ returns whether or not it is fake
 whether or not it is in the fakeLinks array
 */
 function isLinkFake(link : String){
-  var output = new Boolean();
-  var counter = 0;
+  let output = new Boolean();
+  let counter = 0;
 
   while((counter < fakeLinks.length) && (output == false)){
     output = link.includes(fakeLinks[counter]);
