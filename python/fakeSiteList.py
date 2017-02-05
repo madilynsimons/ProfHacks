@@ -1,3 +1,8 @@
+## Python module utilizing BeautifulSoup4, re.py, and requests
+## Checks the site Fake News Checker for a list of
+## fake news websites and compiles them into a txt file
+## for use in in inject.js
+
 from bs4 import BeautifulSoup
 import re
 import requests
@@ -17,15 +22,29 @@ def main():
         outfile.write(site + '\n')
 
 def get_page_content(URL):
+    """
+    Returns: <BeautifulSoup> Object of the page URL specified.
+    """
     page = requests.get(URL)
     return BeautifulSoup(page.content, 'html.parser')
     
 def import_sites():
+    """
+    Returns a <list> of all tags on the page with the specified string in the href
+    """
     content = get_page_content(fakeNews)
 
     return content.find_all(href=re.compile('fake-news-source'))
 
 def get_links(tagList):
+    """
+    Loads the links of each website.
+
+    URL names are encoded in the tag directly after the one containing 'Website'
+    on each page.  That's about as smart as I get.
+
+    Returns: a <list> of links from Fake News Checker, to be written to a file.
+    """
     print('Getting sites:  |', end='')
     sites = []
     count = 0
