@@ -5,7 +5,7 @@ chrome.extension.sendMessage({}, function (response) {
 			let sites = "";
 			let list = [];
 			let xhr = new XMLHttpRequest()
-			xhr.open('GET', 'http://timsmith.xyz/sites.txt', true)
+			xhr.open('GET', 'http://crookednews.net.s3-website-us-east-1.amazonaws.com/sites.txt', true)
     		xhr.onload = () => {
       			if (xhr.status >= 200 && xhr.status < 400) {
         			sites = xhr.response;
